@@ -1,0 +1,2 @@
+ ansible-playbook hello.yml -i 'local,' --connection=local
+
