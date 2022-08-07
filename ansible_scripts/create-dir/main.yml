@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    # see https://docs.ansible.com/ansible/ping_module.html
+    - name: create a directory
+      file: path=hello_world state=directory

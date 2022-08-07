@@ -1,0 +1,19 @@
+---
+- hosts: all
+  vars:
+    dir_name: "sample"
+    users_list: ["samp1","samp2"]
+  tasks:
+    # see https://docs.ansible.com/ansible/ping_module.html
+    - name: test connection
+      ping:
+    - name: Create a directory
+      file: path={{ dir_name }} state=directory
+    - name: Add several users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: present
+        groups: "wheel"
+      become: yes
+      become_user: root
+      loop: "{{ users_list }}"
