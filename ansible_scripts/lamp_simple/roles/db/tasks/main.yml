@@ -10,6 +10,7 @@
    - MySQL-python
    - libselinux-python
    - libsemanage-python
+   - iptables-services
 
 - name: Configure SELinux to start mysql on any port
   seboolean:

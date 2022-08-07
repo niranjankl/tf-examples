@@ -12,6 +12,7 @@
    - git
    - libsemanage-python
    - libselinux-python
+   - iptables-services
 
 - name: insert iptables rule for httpd
   lineinfile:
